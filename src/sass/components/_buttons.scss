@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+
+.button {
+  --padding: $button-padding;
+  --border-radius: $button-border-radius;
+
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  text-transform: $button-text-transform;
+  font-weight: $button-font-weight;
+  padding: var(--padding);
+  border: $button-border;
+  border-radius: var(--border-radius);
+  transition: 275ms ease;
+  box-shadow: $button-box-shadow;
+  align-items: center;
+
+  &:is(:hover, :focus) {
+    box-shadow: $button-hover-box-shadow;
+  }
+
+  &[data-type="accent"] {
+    background-color: $button-accent-background;
+    color: $button-accent-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-accent-background-hover;
+      color: $button-accent-color-hover;
+    }
+  }
+
+  &[data-type="primary"] {
+    background-color: $button-primary-background;
+    color: $button-primary-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-primary-background-hover;
+      color: $button-primary-color-hover;
+    }
+  }
+
+  &[data-type="link"] {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    color: $button-link-color;
+    box-shadow: none;
+    gap: 0.5rem;
+
+    &:is(:hover, :focus) {
+      background-color: transparent;
+      color: $button-link-color-hover;
+      & > span {
+      }
+    }
+  }
+}
